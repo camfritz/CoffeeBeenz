@@ -1,22 +1,16 @@
 class CoffeeShop
+	attr_accessor :distance
+	attr_accessor :popularity
 	def initialize(distance, popularity)
 		@distance = distance
 		@popularity = popularity
 	end
 
-	def withinLocalRange?
-		if @distance < 100
-			return true
-		else
-			return false
-		end
+	def within_local_range?
+		return @distance < 100
 	end
 
-	def popularityMinimumTen?
-		if @popularity >= 10
-			return true
-		else
-			return false
-		end
+	def popularity_is_acceptable?
+		return @popularity >= 10
 	end
 end
