@@ -5,10 +5,9 @@ RSpec.describe "adding a coffee shop", type: :system do
 		fill_in "Name", with: "Backporch Coffee"
 		fille_in "City", with: "Bend"
 		fill_in "Beans", with: "Pelaton:Columbia\nBrasil:Brazil"
-		click_on("Create Project")
+		click_on("Create Coffee Shop")
 		visit coffee_shops_path
 		expect(page).to have_content("Backporch Coffee")
 		expect(page).to have_content("Columbia")
 	end
-
 end

@@ -10,7 +10,7 @@ class CreatesCoffeeShop
 	end
 
 	def build
-		self.coffee_shop = CoffeeShop.new(name, closing_time, popularity, city, bean_origin)
+		self.coffee_shop = CoffeeShop.new
 	end
 
 end
