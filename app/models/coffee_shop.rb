@@ -1,9 +1,8 @@
 class CoffeeShop
-	attr_accessor :closing_time
-	attr_accessor :popularity
-	attr_accessor :city
-	attr_accessor :bean_origin
-	def initialize(closing_time, popularity, city, bean_origin)
+	attr_accessor :name, :closing_time, :popularity, :city, :bean_origin
+
+	def initialize(name, closing_time, popularity, city, bean_origin)
+		@name = name
 		@closing_time = closing_time
 		@popularity = popularity
 		@city = city
