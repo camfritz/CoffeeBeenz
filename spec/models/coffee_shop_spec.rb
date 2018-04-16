@@ -1,39 +1,33 @@
 require "rails_helper"
 
 RSpec.describe CoffeeShop do
-	back_porch_coffee = CoffeeShop.new(75, 11, 2, 12)
-	pdx_coffee = CoffeeShop.new(170, 8, 5, 2)
 
-	it "considers a coffee shop that is within local range (<= 100)" do
-		expect(back_porch_coffee.within_local_range?).to be_truthy
+	it "considers a coffee shop that is open late (after 5pm)" do
+		backporch_coffee = CoffeeShop.new(16, 11, "Bend", "Columbia")
+		pdx_coffee = CoffeeShop.new(20, 8, "Portland", "Rwanda")
+		expect(backporch_coffee.open_late?).not_to be_truthy
+		expect(pdx_coffee.open_late?).to be_truthy
 	end
 
 	it "considers a coffee shop with an acceptable popularity (>= 10)" do
-		expect(back_porch_coffee.popularity_is_acceptable?).to be_truthy
+		backporch_coffee = CoffeeShop.new(16, 11, "Bend", "Columbia")
+		pdx_coffee = CoffeeShop.new(20, 8, "Portland", "Rwanda")
+		expect(backporch_coffee.popularity_is_acceptable?).to be_truthy
+		expect(pdx_coffee.popularity_is_acceptable?).not_to be_truthy
 	end
 
-	it "considers a coffee shop that is not within local range (> 100)" do
-		expect(pdx_coffee.within_local_range?).to be_falsy
+	it "considers if a coffee shop is located within Bend" do
+		backporch_coffee = CoffeeShop.new(16, 11, "Bend", "Columbia")
+		pdx_coffee = CoffeeShop.new(20, 8, "Portland", "Rwanda")
+		expect(backporch_coffee.is_in_bend?).to be_truthy
+		expect(pdx_coffee.is_in_bend?).not_to be_truthy
 	end
 
-	it "considers a coffee shop with an unacceptable popularity (< 10)" do
-		expect(pdx_coffee.popularity_is_acceptable?).to be_falsy
+	it "considers a coffee shop with beans from Columbia to be acceptable" do
+		backporch_coffee = CoffeeShop.new(16, 11, "Bend", "Columbia")
+		pdx_coffee = CoffeeShop.new(20, 8, "Portland", "Rwanda")
+		expect(backporch_coffee.has_beans_from_columbia?).to be_truthy
+		expect(pdx_coffee.has_beans_from_columbia?).not_to be_truthy
 	end
-
-	it "considers a coffee shop with acceptable price (<= 4)" do
-		expect(back_porch_coffee.is_affordable?).to be_truthy
-	end
-
-	it "considers a coffee shop with acceptable price (<= 4)" do
-		expect(pdx_coffee.is_affordable?).to be_falsy
-	end
-
-	it "considers a coffee shop with outdoor seating (> 0)" do
-		expect(back_porch_coffee.has_outdoor_seating?).to be_truthy
-	end
-
-	it "considers a coffee shop with outdoor seating (> 0)" do
-		expect(pdx_coffee.has_outdoor_seating?).to be_truthy
-	end	
 
 end

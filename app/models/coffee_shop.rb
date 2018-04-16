@@ -1,28 +1,28 @@
 class CoffeeShop
-	attr_accessor :distance
+	attr_accessor :closing_time
 	attr_accessor :popularity
-	attr_accessor :price
-	attr_accessor :outdoorSeating
-	def initialize(distance, popularity, price, outdoorSeating)
-		@distance = distance
+	attr_accessor :city
+	attr_accessor :bean_origin
+	def initialize(closing_time, popularity, city, bean_origin)
+		@closing_time = closing_time
 		@popularity = popularity
-		@price = price
-		@outdoorSeating = outdoorSeating
+		@city = city
+		@bean_origin = bean_origin
 	end
 
-	def within_local_range?
-		return @distance < 100
+	def open_late?
+		return @closing_time > 17
 	end
 
 	def popularity_is_acceptable?
 		return @popularity >= 10
 	end
 
-	def is_affordable?
-		return @price <= 4
+	def is_in_bend?
+		return @city == "Bend"
 	end
 
-	def has_outdoor_seating?
-		return @outdoorSeating > 0
+	def has_beans_from_columbia?
+		return @bean_origin == "Columbia"
 	end
 end
