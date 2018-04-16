@@ -1,0 +1,14 @@
+<h1>New CoffeeShop</h1>
+
+<%= form_for(@coffee_shop) do |f| %>
+<%= f.label(:name) %>
+<%= f.text_field(:name) %>
+<br />
+<%= f.label(:city) %>
+<%= f.text_field(:city) %>
+<br />
+<%= f.label(:beans) %>
+<%= f.text_field(:beans) %>
+<br />
+<%= f.submit %>
+<% end %>
