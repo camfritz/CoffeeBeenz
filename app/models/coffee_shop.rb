@@ -1,4 +1,4 @@
-class CoffeeShop
+class CoffeeShop < ApplicationRecord
 	attr_accessor :name, :closing_time, :popularity, :city, :bean_origin
 
 	def open_late?
