@@ -8,7 +8,7 @@ RSpec.describe "adding a coffee shop", type: :system do
 		click_on("Create Coffee shop")
 		visit coffee_shops_path
 		expect(page).to have_content("Backporch Coffee")
-		expect(page).to have_content("Columbia")
+		expect(page).to have_content("Bend")
 	end
 
 	# it "simulates a user to create a coffee shop with varied attributes" do

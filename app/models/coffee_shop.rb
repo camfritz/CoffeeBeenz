@@ -1,6 +1,5 @@
 class CoffeeShop < ApplicationRecord
-	attr_accessor :name, :closing_time, :popularity, :city, :bean_origin
-
+	
 	def open_late?
 		return self.closing_time > 17
 	end
