@@ -1,5 +1,9 @@
 class CoffeeShop < ApplicationRecord
-	
+
+	validates :name, presence: true
+	validates :city, presence: true
+	validates :bean_origin, presence: true
+
 	def open_late?
 		return self.closing_time > 17
 	end
