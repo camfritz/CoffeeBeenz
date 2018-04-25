@@ -1,6 +1,12 @@
 ###Coffee Shop Unit Tests###
 
 # expect coffee_shop to respond to drinks
+RSpec.describe CoffeeShop, type: :model do
+	let(:coffee_shop) {CoffeeShop.new}
+	it "expects a coffee shop to respond to drinks" do
+		expect(coffee_shop).to respond_to :drinks
+	end
+end
 
 # require "rails_helper"
 
