@@ -1,7 +1,10 @@
 require 'rails_helper'
 
-# expect coffee_shop to respond to drinks
+# expect drink to respond to coffee_shops
 
 RSpec.describe Drink, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "expects drink to respond to coffee shops" do
+    latte = Drink.new()
+    expect(latte).to respond_to(:coffee_shops)
+  end
 end
