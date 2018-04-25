@@ -1,5 +1,7 @@
 ###Coffee Shop Unit Tests###
 
+# expect coffee_shop to respond to drinks
+
 # require "rails_helper"
 
 # RSpec.describe CoffeeShop do

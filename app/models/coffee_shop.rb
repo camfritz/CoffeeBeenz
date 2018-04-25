@@ -1,5 +1,7 @@
 class CoffeeShop < ApplicationRecord
 
+	has_and_belongs_to_many :drinks
+
 	validates :name, presence: true
 	validates :city, presence: true
 	validates :bean_origin, presence: true
