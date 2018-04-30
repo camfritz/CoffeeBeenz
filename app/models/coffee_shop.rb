@@ -21,4 +21,12 @@ class CoffeeShop < ApplicationRecord
 	def has_beans_from_columbia?
 		return self.bean_origin == "Columbia"
 	end
+
+	def has_closing_time?
+		return self.closing_time != nil
+	end
+
+	def has_name?
+		return self.name != nil
+	end
 end

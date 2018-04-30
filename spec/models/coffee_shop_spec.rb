@@ -20,6 +20,14 @@ RSpec.describe CoffeeShop, type: :model do
 	it "expects a coffee shop to have at least one drink" do
 		expect(coffee_shop).to have_drink
 	end
+
+	it "expects a coffee shop to not have a closing time" do
+		expect(coffee_shop.has_closing_time?).to eq(false)
+	end
+
+	it "expects a coffee_shop to not have a name" do
+		expect(coffee_shop.has_name?).to eq(false)
+	end
 end
 
 
