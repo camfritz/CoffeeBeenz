@@ -33,4 +33,12 @@ RSpec.describe Drink, type: :model do
 	it "expects a drink to not have a name" do
 		expect(drink.name).to be_nil
 	end
+
+  it "expects a drink to not have a size" do
+    expect(drink.size).to be_nil
+  end
+
+  it "expects a drink to not have a bean" do
+    expect(drink.bean).to be_nil
+  end
 end

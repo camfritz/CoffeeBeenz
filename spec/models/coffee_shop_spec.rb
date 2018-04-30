@@ -25,9 +25,13 @@ RSpec.describe CoffeeShop, type: :model do
 		expect(coffee_shop.has_closing_time?).to eq(false)
 	end
 
-	it "expects a coffee_shop to not have a name" do
+	it "expects a coffee shop to not have a name" do
 		expect(coffee_shop.has_name?).to eq(false)
 	end
+
+  it "expects a coffee shop to not be in Bend" do
+    expect(coffee_shop).not_to be_is_in_bend
+  end
 end
 
 
