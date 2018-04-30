@@ -41,4 +41,8 @@ RSpec.describe Drink, type: :model do
   it "expects a drink to not have a bean" do
     expect(drink.bean).to be_nil
   end
+
+  it { should validate_presence_of(:name) }
+  it { should have_and_belong_to_many(:coffee_shops) }
+  it { should validate_presence_of(:bean) }
 end
