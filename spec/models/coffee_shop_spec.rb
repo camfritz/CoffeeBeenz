@@ -11,7 +11,7 @@ end
 
 # expect coffee_shop to respond to drinks
 RSpec.describe CoffeeShop, type: :model do
-	let(:coffee_shop) {CoffeeShop.new}
+	let(:coffee_shop) { FactoryBot.build_stubbed(:coffee_shop) }
 
 	it "expects a coffee shop to respond to drinks" do
 		expect(coffee_shop).to respond_to :drinks
@@ -25,13 +25,13 @@ RSpec.describe CoffeeShop, type: :model do
 		expect(coffee_shop.has_closing_time?).to eq(false)
 	end
 
-	it "expects a coffee shop to not have a name" do
-		expect(coffee_shop.has_name?).to eq(false)
+	it "expects a coffee shop to have a name" do
+		expect(coffee_shop.has_name?).to eq(true)
 	end
 
-  it "expects a coffee shop to not be in Bend" do
-    expect(coffee_shop).not_to be_is_in_bend
-  end
+	it "expects a coffee shop to not be in Bend" do
+		expect(coffee_shop).not_to be_is_in_bend
+	end
 end
 
 
