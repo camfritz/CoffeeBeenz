@@ -1,7 +1,7 @@
 FactoryBot.define do
 	factory :drink do
 		name "Americano"
-		bean "Columbia Roast"
+		bean "Columbian"
 		size "Large"
 	end
 end
