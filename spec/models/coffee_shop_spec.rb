@@ -1,6 +1,7 @@
 ###Coffee Shop Unit Tests###
 require "rails_helper"
 require'rspec/expectations'
+require "FakeCustomer"
 
 #define custom matcher 'have_drink'
 RSpec::Matchers.define :have_drink do |expected|
@@ -31,6 +32,17 @@ RSpec.describe CoffeeShop, type: :model do
 
 	it "expects a coffee shop to not be in Bend" do
 		expect(coffee_shop).not_to be_is_in_bend
+	end
+
+	describe "test doubles"
+
+	it "stubs a customer" do
+		expect(coffee_shop).to receive(:customer).and_return "Customer 1"
+		expect(coffee_shop.customer).to eq("Customer 1")
+	end
+
+	it "serves a customer" do
+		expect(coffee_shop.serve_customer(FakeCustomer.new)).to be_truthy
 	end
 end
 

@@ -6,6 +6,8 @@ class CoffeeShop < ApplicationRecord
 	validates :city, presence: true
 	validates :bean_origin, presence: true
 
+	attr_accessor :customer
+
 	def open_late?
 		return self.closing_time > 17
 	end
@@ -28,5 +30,10 @@ class CoffeeShop < ApplicationRecord
 
 	def has_name?
 		return self.name != nil
+	end
+
+	def serve_customer(customer)
+		customer.serve
+		return true
 	end
 end
