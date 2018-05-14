@@ -5,8 +5,8 @@ class Drink < ApplicationRecord
 	validates :name, presence: true
 	validates :bean, presence: true
 
-  def brew(big_dependency)
-    big_dependency.execute
+  def brew(coffee)
+    coffee.make
     "coffee time!"
   end
 
