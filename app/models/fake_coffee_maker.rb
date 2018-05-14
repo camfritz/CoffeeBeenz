@@ -1,4 +1,4 @@
-class FakeDrink
+class FakeCoffeeMaker
   def make
   end
 end

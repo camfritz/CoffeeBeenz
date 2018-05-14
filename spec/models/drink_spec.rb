@@ -48,9 +48,13 @@ RSpec.describe Drink, type: :model do
 	it { should validate_presence_of(:bean) }
 
 	big_drink = Drink.new
-	
+
 	it "expects a drink to return 'coffee time!'" do
-		expect(big_drink.brew(FakeDrink.new)).to eq('coffee time!')
+		expect(big_drink.brew(FakeCoffeeMaker.new)).to eq('coffee time!')
+	end
+
+	it "expects a coffee maker to make a drink" do
+		expect(big_drink.brew(FakeCoffeeMaker.new)).not_to be_nil
 	end
 
 end
