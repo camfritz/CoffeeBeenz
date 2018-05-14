@@ -46,4 +46,11 @@ RSpec.describe Drink, type: :model do
 	it { should validate_presence_of(:name) }
 	it { should have_and_belong_to_many(:coffee_shops) }
 	it { should validate_presence_of(:bean) }
+
+	big_drink = Drink.new
+	# result = big_drink.brew(BigDependency.new)
+
+	it "expects a drink to return 'coffee time!'" do
+		expect(big_drink.brew(BigDependency.new)).to eq('coffee time!')
+	end
 end
