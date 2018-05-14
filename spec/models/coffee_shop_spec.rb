@@ -1,7 +1,6 @@
 ###Coffee Shop Unit Tests###
 require "rails_helper"
 require'rspec/expectations'
-require "FakeCustomer"
 
 #define custom matcher 'have_drink'
 RSpec::Matchers.define :have_drink do |expected|

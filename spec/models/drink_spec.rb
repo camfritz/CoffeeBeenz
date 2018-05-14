@@ -48,9 +48,14 @@ RSpec.describe Drink, type: :model do
 	it { should validate_presence_of(:bean) }
 
 	big_drink = Drink.new
-	# result = big_drink.brew(BigDependency.new)
+	#This test is slow
+	# it "expects a drink to return 'coffee time!'" do
+	# 	expect(big_drink.brew(BigDrink.new)).to eq('coffee time!')
+	# end
 
+	#This test is fast!
 	it "expects a drink to return 'coffee time!'" do
-		expect(big_drink.brew(BigDependency.new)).to eq('coffee time!')
+		expect(big_drink.brew(FakeDrink.new)).to eq('coffee time!')
 	end
+
 end
